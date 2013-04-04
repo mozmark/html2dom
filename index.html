@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html
     <head>
-       	<meta http-equiv="Content-Type" content="text/xhtml;charset=utf-8" />
+        <meta http-equiv="Content-Type" content="text/xhtml;charset=utf-8" />
         <title></title>
-        <script src="js/html2dom.js"></script>        
+        <script src="js/html2dom.js"></script>
         <script src="js/main.js"></script>
 
-<!-- 
+<!--
 most HTML and script-things <del>stolen</del>adapted from mario's innerHTML test-tool,
 at html5sec.org/innerhtml - thaaaaanks :D
 -->
@@ -16,7 +16,7 @@ iframe#iframe {display:none; width:100%; overflow-y:scroll;}
 </style>
 </head>
 <body>
-<button onclick="tutorial()">Tutorial</button>
+    <button onclick="tutorial()">Tutorial</button>
 <hr />
 <textarea id="html"></textarea>
 <hr />
@@ -36,21 +36,22 @@ var domjs = document.getElementById('domjs');
 var iframe = document.getElementById('iframe');
 var resulthtml = document.getElementById('resulthtml');
 
-location.hash.length > 1 ? html.value = location.hash.slice(1) : false; 
+location.hash.length > 1 ? html.value = location.hash.slice(1) : false;
 location.hash = '';
 
 var updateCanvas = function(e){
-	if(e && e.keyCode && (e.keyCode == 27 || e.keyCode == 37 || e.keyCode == 38 || e.keyCode == 39 || e.keyCode == 40 || e.keyCode == 35 || e.keyCode == 35)) {
-		return false;
-		// this halts on arrow-key presses and escape and so on,
-		// added 36,35 i.e., home/end keys
-	}
-	// saving state via url...
-    location.hash=html.value; // a little document.write() backup
+  if(e && e.keyCode && (e.keyCode == 27 || e.keyCode == 37 || e.keyCode == 38 || e.keyCode == 39 || e.keyCode == 40 || e.keyCode == 35 || e.keyCode == 35)) {
+    return false;
+    // this halts on arrow-key presses and escape and so on,
+    // added 36,35 i.e., home/end keys
+  }
+  // saving state via url...
+  location.hash=html.value; // a little document.write() backup
 };
 html.onkeyup = updateCanvas;
 window.onload = updateCanvas;
 </script>
 
+<a href="https://github.com/freddyb/html2dom"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub"></a>
 </body>
 </html>
